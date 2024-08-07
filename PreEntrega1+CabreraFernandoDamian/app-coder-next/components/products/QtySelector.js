@@ -18,7 +18,7 @@ const QtySelector = ({ item, esCarrito }) => {
   return (
     <div className="flex items-center gap-3">
       <Counter counter={quantity} setCounter={setQuantity} max={item.stock} />
-      {!esCarrito && <Boton onClick={handleAdd}>Agregar al carrito</Boton>}
+      {!esCarrito && <Boton onClick={handleAdd} className="text-xs/[22px]">Agregar al carrito</Boton>}
     </div>
   )
 }
