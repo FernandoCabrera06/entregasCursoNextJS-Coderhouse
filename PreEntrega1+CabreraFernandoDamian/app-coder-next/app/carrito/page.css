@@ -1,0 +1,60 @@
+.card-compra-container {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  grid-template-areas: "card-compra-a cuenta-total" "card-compra-b cuenta-total";
+}
+.card-compra {
+  border: solid 1px #000;
+  width: 39rem;
+  height: 8rem;
+  margin: 0 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+.card-compra .a {
+  grid-area: card-compra-a;
+}
+.card-compra .b {
+  grid-area: card-compra-b;
+}
+.card-compra img {
+  width: 6rem;
+}
+.cuenta-total {
+  grid-area: cuenta-total;
+  border: solid 1px #000;
+  width: 350px;
+  height: 22rem;
+  text-align: center;
+}
+.cuenta-total h1 {
+  margin: 2rem 0;
+  font-size: 1.4rem;
+}
+.cuenta-total hr {
+  width: 15rem;
+  margin: 2rem 0 2rem 3.5rem;
+}
+.cuenta-total p {
+  font-size: 1rem;
+}
+.cuenta-total button {
+  margin-top: 1rem;
+  margin-left: 6%;
+  padding: 0.3rem;
+  color: #fff;
+  font-size: 1rem;
+}
+.card-compra-info {
+  display: flex;
+}
+.card-compra-info p {
+  padding-left: 0.4rem;
+}
+.card-compra-info h2 {
+  padding-left: 0.4rem;
+}
