@@ -1,13 +1,22 @@
-import { products } from "@/data/mockData"
 import Image from "next/image"
 import QtySelector from "./QtySelector"
 import GoBack from "../ui/GoBack"
 
-const ProductDetail = ({ id }) => {
-  const item = products.find((product) => product.id == id)
+const ProductDetail = async ({ id }) => {
+  let item = {}
+  try {
+    item = await fetch(`http://localhost:3000/api/product/${id}`, {
+      cache: "no-store",
+      next: {
+        revalidate: 0,
+      },
+    }).then((r) => r.json())
+  } catch (e) {
+    console.log("Hubo un error el producto: " + e)
+  }
 
   return (
-    <div ClassName="max-w-4xl m-auto">
+    <div className="max-w-4xl m-auto">
       <GoBack className="text-sm" />
       <div className="container m-auto flex justify-center">
         <article className="CardItem">

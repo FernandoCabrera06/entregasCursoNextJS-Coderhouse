@@ -11,6 +11,19 @@ export async function generateMetadata({ params, searchParams }, parents) {
   }
 }
 
+export function generateStaticParams() {
+  return [
+    { category: "todos" },
+    { category: "perros" },
+    { category: "aves" },
+    { category: "gatos" },
+    { category: "reptiles" },
+    { category: "peces" },
+  ]
+}
+
+export const revalidate = 3600
+
 const Catalogo = ({ params }) => {
   const { category } = params
 

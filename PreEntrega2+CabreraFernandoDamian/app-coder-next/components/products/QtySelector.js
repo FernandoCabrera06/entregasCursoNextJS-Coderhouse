@@ -13,8 +13,6 @@ const QtySelector = ({ item, esCarrito }) => {
     })
   }
 
-  useEffect(() => {}, [quantity])
-
   return (
     <div className="flex items-center gap-3">
       <Counter counter={quantity} setCounter={setQuantity} max={item.stock} />

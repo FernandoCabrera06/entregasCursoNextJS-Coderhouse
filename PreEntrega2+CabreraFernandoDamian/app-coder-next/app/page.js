@@ -29,7 +29,7 @@ export default function Home() {
             data-aos-easing="linear"
             data-aos-duration="1500"
           >
-            <Image src="/banner.png" alt="banner" width={300} height={300} />
+            <Image src="/banner.png" alt="banner" width={600} height={600} />
           </div>
         </section>
 

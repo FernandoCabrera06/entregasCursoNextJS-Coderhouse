@@ -1,10 +1,20 @@
 import ProductDetail from "@/components/products/ProductDetail"
 import Footer from "@/components/ui/Footer"
 import Header from "@/components/ui/Header"
-import { products } from "./../../../../data/mockData"
 
 export async function generateMetadata({ params }) {
-  const producto = products.find((prod) => prod.id == params.id)
+  const { id } = params
+  let producto = {}
+  try {
+    producto = await fetch(`http://localhost:3000/api/product/${id}`, {
+      cache: "no-store",
+      next: {
+        revalidate: 0,
+      },
+    }).then((r) => r.json())
+  } catch (e) {
+    console.log("Hubo un error el producto: " + e)
+  }
 
   return {
     title: `Rocco alimentos - ${producto.category}`,
@@ -15,7 +25,6 @@ export async function generateMetadata({ params }) {
 
 const Catalogo = ({ params }) => {
   const { id } = params
-
   return (
     <main>
       <Header />
