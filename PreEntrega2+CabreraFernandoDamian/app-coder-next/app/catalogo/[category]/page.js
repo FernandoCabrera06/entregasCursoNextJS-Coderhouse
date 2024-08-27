@@ -2,6 +2,7 @@ import CategoriesMenu from "@/components/products/CategoriesMenu"
 import ProductsList from "@/components/products/ProductsList"
 import Footer from "@/components/ui/Footer"
 import Header from "@/components/ui/Header"
+import { Suspense } from "react"
 
 export async function generateMetadata({ params, searchParams }, parents) {
   return {
@@ -35,7 +36,9 @@ const Catalogo = ({ params }) => {
       </div>
       <div className="flex flex-row">
         <CategoriesMenu />
+        <Suspense fallback={<h3>Cargando...</h3>}>
         <ProductsList category={category.toLocaleLowerCase()} />
+        </Suspense>
       </div>
       <Footer />
     </main>

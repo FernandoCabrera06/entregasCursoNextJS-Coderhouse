@@ -1,5 +1,6 @@
 import Image from "next/image"
 import "./Header.css"
+import CartWidget from "./CartWidget"
 
 const Header = () => {
   return (
@@ -32,10 +33,10 @@ const Header = () => {
             Administrador
           </a>
 
-          <a className="text-base text-slate-100 p-3" href="/carrito">
-            <span id="contadorCarrito" className="badge text-bg-danger"></span>
-            Carrito 🛒
-          </a>
+          <div>
+            <span id="contadorCarrito" className="badge text-bg-danger"><CartWidget/></span>
+          </div>
+
         </nav>
       </div>
     </header>
